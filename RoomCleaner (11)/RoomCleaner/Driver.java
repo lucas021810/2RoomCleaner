@@ -39,14 +39,19 @@ public class Driver implements Directions {
 
 		Robot roomba = new Robot(11,6,South,0);
 
-		while (roomba.frontisClear()){
+		while (roomba.frontIsClear()){
 			while (roomba.nextToABeeper()){
 				roomba.pickBeeper();
 
 			}
 
-			roomba.move();
+			
 		}
-	}
+		
+		 if(roomba.fron())
+		 
+
+		 }
+	} 
 
 }
