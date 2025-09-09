@@ -35,23 +35,40 @@ public class Driver implements Directions {
 
 		World.readWorld(wrldName);
     World.setVisible(true);
-		World.setDelay(10);
+		World.setDelay(20);
 
 		Robot roomba = new Robot(11,6,South,0);
 
 		while (roomba.frontIsClear()){
 			while (roomba.nextToABeeper()){
 				roomba.pickBeeper();
-
 			}
+			roomba.move();
+			}
+			if(roomba.facingEast() == true){
+				roomba.turnLeft();
+				roomba.move();
+				roomba.turnLeft();
 
-			
-		}
+				
+			}
+			else if (roomba.facingWest()==true){
+				roomba.turnLeft();
+				roomba.turnLeft();
+				roomba.turnLeft();
+				roomba.move();
+			}
+				}
+
+	}
+
+
+
+
 		
-		 if(roomba.fron())
+		 
 		 
 
-		 }
-	} 
+		 
+	 
 
-}
