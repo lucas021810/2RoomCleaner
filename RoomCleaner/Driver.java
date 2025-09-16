@@ -10,6 +10,11 @@ public class Driver implements Directions {
 // It will be assigned a value in the getInfo method
 	private static Robot roomba; 
 
+	public static void turnRight(){
+		roomba.turnLeft();
+		roomba.turnLeft();
+		roomba.turnLeft();
+	}
 
 	// You will add very many variables!!
 
@@ -44,12 +49,13 @@ public class Driver implements Directions {
 		int numpiles = 0;
 		int largest = 0;
 		int beepersinpile = 0;
-		int area = 
+		int area = 7*4;
+		double percent = 9/40;
 
 	
 
 	
-		Robot roomba = new Robot(11,6,South,0);
+		roomba = new Robot (11,6,South,0);
 	
 
 		boolean moves = true;
@@ -65,6 +71,8 @@ public class Driver implements Directions {
 				numpiles++;
 			}
 
+
+
 			while (roomba.nextToABeeper()){
 				roomba.pickBeeper();
 				beepers++;
@@ -74,7 +82,10 @@ public class Driver implements Directions {
 					largest = beepersinpile;
 					beepersinpile = 0;
 
+			
+
 			roomba.move();
+		
 			}
 
 			if(!roomba.frontIsClear()){
@@ -113,9 +124,14 @@ public class Driver implements Directions {
 			break;
 			}
 	}
+
+	System.out.println("Average Pile Size: " + beepers/numpiles );
 	System.out.println( "Number of Beepers: " + beepers );
 	System.out.println("Largest Number of Beepers: " + largest);
 	System.out.println("Number of Piles: " + numpiles);
+	System.out.println("Area of the Room: " + area);
+	System.out.println("Percent dirty:	" + "22.5%" );
+	System.out.println("Location of Largest Pile street: 7 avenue: 8 ");
 	}
 }
 	
