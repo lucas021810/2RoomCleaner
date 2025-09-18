@@ -116,9 +116,7 @@ public class Driver implements Directions {
 			roomba.turnLeft();
 			if(roomba.frontIsClear()){
 			roomba.move();
-			roomba.turnLeft();
-			roomba.turnLeft();
-			roomba.turnLeft();
+			turnRight();
 			}
 			if(!roomba.frontIsClear())
 			break;
