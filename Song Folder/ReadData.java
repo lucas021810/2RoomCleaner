@@ -7,16 +7,15 @@ public class ReadData
 {
   
   public static void read(){
-    int count = 0;
+    int count = 1;
     Scanner songreader;
     try{
     songreader = new Scanner(new File("songs 2025-2026 ANSI.csv"));
 
-    while(songreader.hasNext())
-    System.out.println(count + "" + songreader.split(","));
+    while(songreader.hasNext()){
+    String line = songreader.nextLine();
+    System.out.println(count + " " + line.split(";")[2]);
     count++;
-    {
-      System.out.println(songreader.nextLine());
     } 
     songreader.close();
 
