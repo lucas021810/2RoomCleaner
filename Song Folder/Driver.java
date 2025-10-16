@@ -1,6 +1,7 @@
 public class Driver {
   public static void main(String[] args)
   {
-    ReadData.read();
+    ReadData r = new ReadData();
+    Song [] list = r.read();
   }
 }
